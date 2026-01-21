@@ -48,7 +48,7 @@ When the server finishes loading, you should see a message like this:
 Thank you for using ### Scripted Events Reloaded ### by Elektryk_Andrzej!
 ```
 
-This means that SER has loaded successfully.&#x20;
+This means that SER has loaded successfully.
 
 {% hint style="warning" %}
 If you don't see this, check if an error hasn't been thrown. The most common issues are:
