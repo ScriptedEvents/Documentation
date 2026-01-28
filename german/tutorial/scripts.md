@@ -5,43 +5,43 @@ metaLinks:
     - /broken/spaces/cuMKPytdZ4h8yad4Mib4/pages/R2VVig28xjUEym0cJuf4
 ---
 
-# Scripts
+# Skripts
 
-Scripts are lists of commands the server executes automatically. Instead of you running each command by yourself, you can make a script to store all of the commands, and run just that script!
+Skripte sind Listen von Befehlen, die der Server automatisch ausführt. Anstatt jeden Befehl einzeln auszuführen, kannst du ein Skript erstellen, welches alle Befehle speichert, und nur dieses Skript ausführen!
 
-## Where to make a script?
+## Wo machst du ein Skript?
 
-All scripts are stored in the `LabAPI -> configs -> Scripted Events Reloaded` folder. You can also make folders with scripts inside the `Scripted Events Reloaded` folder, SER also supports that!
+Alle Skripte sind im Ordner `LabAPI -> configs -> Scripted Events Reloaded` gespeichert. Du kannst auch Ordner mit Skripten innerhalb des Ordners `Scripted Events Reloaded` erstellen, SER unterstützt dies!
 
-## How to make a script?
+## Wie machst du ein Skript?
 
-All scripts are text files. Create a file called `myScript.txt`, which will be your first script. Once created, copy the following:
+Alle Skripte sind eine Textdatei. Erstelle eine Datei mit dem Namen `meinSkript.txt`, welches dein erstes Skript sein wird. Wenn du es erstellt hast, kopiere folgendes:
 
 ```
 Reply "Hello, World!"
 ```
 
-This is now a valid script!
+Dies ist nun ein vollständiges Skript!
 
-## How to run a script?
+## Wie starte ich ein Skript?
 
-You can either run it through the server or remote admin console using the `serrun` command. Simply do
-
-```
-serrun <scriptName>
-```
-
-So in our case, we replace `<scriptName>` with `myScript`:
+Du kannst entweder über den Server oder die Remote-Admin Konsole mit den `serrun` Befehl ausführen. Schreibe ganz einfach:
 
 ```
-serrun myScript
+serrun <skriptName>
+```
+
+In unserem Fall, ersetzen wir `<skriptName>` mit `meinSkript`:
+
+```
+serrun meinSkript
 ```
 
 {% hint style="info" %}
-The `serrun` command only expects **script names, not full file names!**
+Der `serrun` Befehl erwartet nur den **Skript Name, nicht den vollen Dateiname!**
 {% endhint %}
 
-You should now see a message like this:
+Du solltest nun eine Nachricht wie folgendes sehen:
 
 ```
 [21:37:69] serrun myScript
@@ -50,5 +50,5 @@ You should now see a message like this:
 ```
 
 {% hint style="warning" %}
-When using remote admin console, you will need the `ser.run` permission, otherwise the script will not run.
+Wenn du die Remote-Admin Konsole benutzt, brauchst du die `ser.run` Berechtigung, ansonsten kannst du es nicht ausführen.
 {% endhint %}
