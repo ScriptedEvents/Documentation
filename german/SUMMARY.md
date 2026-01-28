@@ -1,19 +1,19 @@
-# Table of contents
+# Inhaltsverzeichnis
 
-* [About](README.md)
+* [Über SER](README.md)
 
 ## Tutorial
 
 * [Installation](tutorial/installation.md)
-* [Scripts](tutorial/scripts.md)
-* [Methods](tutorial/methods.md)
-* [Yielding Methods](tutorial/yielding-methods.md)
-* [Practical script - Server advertisement](tutorial/practical-script-server-advertisement.md)
-* [Variables](tutorial/variables.md)
-* [Player variables](tutorial/player-variables.md)
-* [Practical script - Discourage Surface camping](tutorial/practical-script-discourage-surface-camping.md)
-* [Advanced player variables](tutorial/advanced-player-variables.md)
-* [Returning methods](tutorial/returning-methods.md)
-* [Practical script - Hide & Seek](tutorial/practical-script-hide-and-seek.md)
-* [Work in progress!](tutorial/work-in-progress.md)
-* [Script flags - UNFINISHED](tutorial/script-flags-unfinished.md)
+* [Skripte](tutorial/scripts.md)
+* [Methoden](tutorial/methods.md)
+* [Yielding Methoden](tutorial/yielding-methods.md)
+* [Praktische Skripts - Serverankündigung](tutorial/practical-script-server-advertisement.md)
+* [Variablen](tutorial/variables.md)
+* [Spielervariablen](tutorial/player-variables.md)
+* [Praktische Skripts - Verhinderung von Camping auf der Oberfläche](tutorial/practical-script-discourage-surface-camping.md)
+* [Erweiterte Spielervariablen](tutorial/advanced-player-variables.md)
+* [Rückgabe Methoden](tutorial/returning-methods.md)
+* [Praktische Skripts - Verstecken](tutorial/practical-script-hide-and-seek.md)
+* [In Arbeit!!!](tutorial/work-in-progress.md)
+* [Skript-Flags - UNFERTIG](tutorial/script-flags-unfinished.md)
