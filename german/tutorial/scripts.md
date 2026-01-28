@@ -44,9 +44,9 @@ Der `serrun` Befehl erwartet nur den **Skript Name, nicht den vollen Dateiname!*
 Du solltest nun eine Nachricht wie folgendes sehen:
 
 ```
-[21:37:69] serrun myScript
+[21:37:69] serrun meinSkript
 [21:37:69] Hello, World!
-[21:37:69] Script 'myScript' was requested to run
+[21:37:69] Script 'meinSkript' was requested to run
 ```
 
 {% hint style="warning" %}
