@@ -5,45 +5,45 @@ metaLinks:
     - /broken/spaces/cuMKPytdZ4h8yad4Mib4/pages/3VBvk0kB7bLYGS672GAl
 ---
 
-# About
+# Über SER
 
 ## Was ist `Scripted Events Reloaded`?
 
-**Scripted Events Reloaded (SER)** ist ein SCP:SL plugin fur LabAPI jawohl jawohl that adds a complete custom programming language for server owners to use.
+**Scripted Events Reloaded (SER)** ist ein SCP:SL plugin für LabAPI welches eine komplett eigene Programmiersprache für Serverbesitzer hinzufügt.
 
-## Why use SER?
+## Warum sollte SER benutzt werden?
 
-### ✅ Designed with SCP:SL in mind
+### ✅ Entwickelt mit Blick auf SCP:SL
 
-Every aspect of SER is designed around simplifying the most widely used features of SCP:SL plugins.
+Jeder Aspekt von SER ist darauf ausgelegt, die am häufigsten verwendeten Funktionen von SCP:SL-Plugins zu vereinfachen.
 
-### 🧠 Easy to learn
+### 🧠 Einfach zu lernen
 
-SER cuts down on the unnecessary complexity to remain simple and intuitive, while still providing all the features you need.
+SER reduziert unnötige Komplexität, um einfach und intuitiv zu bleiben und gleichzeitig alle benötigten Funktionen bereitzustellen.
 
-### 📰 Extensive documentation and examples
+### 📰 Umfangreiche Dokumentation und Beispiele
 
-A core part of SER is its devotion to easy access to required documentation and examples. Check out the Wiki!
+Ein Hauptaspekt von SER ist der einfache Zugriff auf die benötigte Dokumentation und Beispiele. Schau im Wiki vorbei!
 
-### 💰 Money saving
+### 💰 Geld sparend
 
-SER is completely free to use, why pay someone to make a simple plugin for you?
+SER ist komplett kostenlos, warum jemanden für einfache Plugins bezahlen?
 
-### 🗂️ All on the server
+### 🗂️ Alles auf dem Server
 
-You don't need any external programs to write scripts with SER, just text files and access to your server.
+Du benötigst keine externen Programme, um mit SER Skripte zu schreiben, nur Textdateien und den Zugriff auf deinen Server.
 
-### ⚡ Speed of development
+### ⚡ Schnelligkeit der Entwicklung
 
-As soon as you save your script, the changes are applied immediately, no server restart is required.
+Sobald du dein Skript speicherst, werden die Änderungen sofort angewendet. Ein neustart des Servers ist nicht erforderlich.
 
-### 🔌 Plugin extensions
+### 🔌 Plugin Erweiterung
 
-SER allows you to control other plugins (like custom roles) directly from your scripts!
+SER erlaubt dir andere Plugins (z.B. Custom Roles) direkt in deinen Skripts zu steuern
 
-#### Just Another Way to Make Plugins?
+### Nur eine weitere Möglichkeit, Plugins zu erstellen?
 
-Nope. SER is not here to compete with traditional plugins.
+Nein. SER nicht da, um sich mit traditionellen Plugins anzulegen.
 
-To stay simple and approachable, SER doesn't support the more advanced features that standard plugin frameworks do.\
-**Do not treat SER as an all-in-one replacement** for C# plugin development.
+Machen wir es einfach: SER unterstützt nicht die erweiterten Funktionen gängiger Plugin-Frameworks.\
+**Betrachte SER nicht als vollständigen Ersatz** für die C# plugin Entwicklung.
