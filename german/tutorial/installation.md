@@ -9,74 +9,74 @@ metaLinks:
 # Installation
 
 {% hint style="danger" %}
-This guide is **NOT** about how to set up your SCP:SL server. This guide is for people who know how servers work and have worked with other plugins before.
+Diese Anleitung beschreibt **NICHT**, wie du deinen SCP:SL Server erstellst. Diese Anleitung richtet sich an Personen, die mit deren Server vertraut sind und bereits Erfahrung mit anderen Erfahrungen mit anderen Plugins haben.
 
-Things that are not strictly about this plugin - like granting admin roles and setting up your server - are not covered here. The official SCP:SL discord server provides technical support for things like this.
+Dinge, die nicht direkt mit diesem Plugin zusammenhängen - wie die Vergabe von Admin-Rollen oder die Servereinrichtung - werden hier nicht behandelt. Der offizielle SCP:SL Discord bietet dafür den Technischen Support.
 {% endhint %}
 
-## #1 - Install the `SER.dll` and `NCalc.dll` files
+## #1 - Installiere die `SER.dll` Datei und `NCalc.dll` Dateien
 
-You can find the latest releases here:
+Du kannst die neueste Version hier finden:
 
 > [https://github.com/ScriptedEvents/ScriptedEventsReloaded/releases](https://github.com/ScriptedEvents/ScriptedEventsReloaded/releases)
 
-## #2 - Move them to the correct folders
+## #2 - Verschiebe diese in den richtigen Ordner
 
 ### `SER.dll`
 
-This is the main plugin. This should be moved to either one of these locations:
+Dies ist das eigentliche Plugin. Diese sollte in einen dieser Ordner verschoben werden:
 
 * `LabAPI -> plugins -> [PORT NUMBER] -> SER.dll`
 * `LabAPI -> plugins -> global -> SER.dll`
 
 {% hint style="info" %}
-`[PORT NUMBER]` is a number like `7777`, which corresponds to a port of your server. It's recommended to put use the `global` directory if you're unsure.
+`[PORT NUMBER]` ist eine Nummer wie `7777`, welche als Port deines Servers gilt. Wir empfehlen den `global` Ordner zu nutzen, wenn du dir unsicher bist.
 {% endhint %}
 
 ### `NCalc.dll`&#x20;
 
-This is a dependency for handling logical operations like conditions. This should be moved to either:
+Dies ist die Dependency des Plugins. Sie wird für die Verarbeitung logischer Operationen wie Bedingungen benötigt. Diese Datei gehört in einer dieser Ordner:
 
 * `LabAPI -> dependencies -> [PORT NUMBER] -> NCalc.dll`
 * `LabAPI -> dependencies -> global -> NCalc.dll`
 
-## #3 - Restart the server
+## #3 - Den Server neustarten
 
-When the server finishes loading, you should see a message like this:
+Wenn der Server den Neustart abgeschlossen hat, sollte so eine Nachricht in der Konsole auftauchen:
 
 ```
 Thank you for using ### Scripted Events Reloaded ### by Elektryk_Andrzej!
 ```
 
-This means that SER has loaded successfully.&#x20;
+Dies bedeutet, dass SER korrekt geladen wurde.&#x20;
 
 {% hint style="warning" %}
-If you don't see this, check if an error hasn't been thrown. The most common issues are:
+Wenn du das nicht siehst, prüfe, ob ein Fehler aufgetreten ist. Häufige Probleme sind:
 
-* Either SER or your server are outdated
-* Incorrect installation
+* Entweder SER oder der Server sind nicht mehr aktuell
+* Falsche Installation
 {% endhint %}
 
-## #4 - Verify&#x20;
+## #4 - Verifizierung&#x20;
 
-After a successful installation, you should see a folder like this:
+Nach einer erfolgreichen Installation, solltest du diesen Ordner sehen:
 
 ```
 LabAPI -> configs -> Scripted Events Reloaded
 ```
 
-Every script must live in this folder in order to be found by SER.
+Jedes Skript muss sich in diesem Ordner befinden um geladen zu werden.
 
-## #5 - Generate example scripts (optional)
+## #5 - Generiere Beispiele für Skripts (Optional)
 
-If you want to check out some example scripts, you can use the `serexamples` command in the server console.
+Wenn du dir einige Beipiele für Skripts ansehen willst, kannst du den Befehl `serexamples` in der Konsole eingeben.
 
-These will be located in:
+Diese befinden sich dann in:
 
 ```
 LabAPI -> configs -> Scripted Events Reloaded -> Example Scripts
 ```
 
-Be sure to know the generated scripts! These may add features that you do not want to have on your server, and are there purely to show off what SER is capable of.
+Mache dich mit den generierten Skripts vertraut! Diese fügen vielleicht Features zu deinem Server hinzu, die du nicht möchtest und sind hauptsächlich für die demonstrierung der Fähigkeiten von SER da.
 
-If you find a script that you do not want to have, just remove the file. You can always bring it back using the `serexamples` command again.
+Wenn du ein unerwünschtes Skript hast, entferne einfach die Datei. Du kannst diese immer mit dem Befehl `serexamples` wieder generieren.
