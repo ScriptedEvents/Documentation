@@ -1,5 +1,5 @@
 ---
-description: How to install SER on your server
+description: Wie installierst du SER auf deinem Server
 icon: bars-progress
 metaLinks:
   alternates:
