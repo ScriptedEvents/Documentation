@@ -7,27 +7,27 @@ metaLinks:
 
 # Methods
 
-Methods are like commands. Like commands, these can take certain arguments/parameters and do something with them. These are the building blocks of your scripts.
+Methods are commands that perform actions. Like all commands, they take certain arguments (parameters) and do something with them. Methods are the fundamental building blocks of your SER scripts.
 
-## What classifies as a method?
+## What Qualifies as a Method?
 
-For something to be classified as a method by the script, it needs to:
+For something to be recognized as a method by the script engine, it must:
 
-1. Be an existing method (findable in `serhelp methods`)
+1. **Be an existing method** (findable in `serhelp methods`)
 
 ```
 🚫 SendMassiveMessage "Hello, World!"
 ✅ Reply "Hello, World!"
 ```
 
-2. Be the first word in the line (exceptions apply, explained later)
+2. **Be the first word in the line** (with rare exceptions)
 
 ```
 🚫 test Reply "Hello, World!"
 ✅ Reply "Hello, World!"
 ```
 
-3. Be the exact same case-wise
+3. **Match the exact case** (PascalCase)
 
 ```
 🚫 reply "Hello, World!"
@@ -35,32 +35,23 @@ For something to be classified as a method by the script, it needs to:
 ✅ Reply "Hello, World!"
 ```
 
-## What methods can I use?
+## Discovering Available Methods
 
-The `serhelp` command will tell you! If you do `serhelp methods`, you will get a list of all methods you have at your disposal.
+Use the `serhelp` command to explore methods! Run `serhelp methods` to see all available methods organized by category.
 
-{% hint style="warning" %}
-By the time you're reading this tutorial, the command could've changed a little. I advise you to verify by yourself if the command matches what is shown here.
-{% endhint %}
+There are currently **> 200 methods** available, organized into categories like:
+- Audio methods
+- Broadcast methods
+- Door methods
+- Health methods
+- Item methods
+- Player methods
+- Teleport methods
+- And many more!
 
-Here's a small part of the output:
+## Getting Information About a Specific Method
 
-```
-...
-
---- Broadcast methods ---
-> ClearCountdown                Removes an active countdown for players if one is active.
-> Countdown                     Creates a countdown using broadcasts.
-> Broadcast                     Sends a broadcast to players.
-> ClearBroadcasts               Clears broadcasts for players.
-> Hint                          Sends a hint to players.
-
-...
-```
-
-## How to get information about a specific method?
-
-You can do `serhelp <methodName>` to get info about a specific method. Let's run the `serhelp Broadcast` command and see what it gives us:
+Use `serhelp <methodName>` to get detailed information about any method. For example, `serhelp Broadcast`:
 
 ```
 === Broadcast ===
@@ -77,40 +68,34 @@ This method expects the following arguments:
  - Expected value: Any text e.g. "Hello, World!"
 ```
 
-## How to use that information?
+## Using Method Information
 
-So, let's say we want a broadcast `cool broadcast` to every player for 3 seconds, how to do that?
+Let's say you want to send a broadcast saying `"cool broadcast"` to every player for 3 seconds. Here's how to break it down:
 
-Well, we have 3 arguments:
-
-1. `players` argument
-
-If we want this argument to mean "all players", we can just use `*`, which represents all players.
+**Argument 1: players**
+- We want all players, so we use `*`
 
 ```
 Broadcast *
 ```
 
-2. `duration` argument
-
-This argument provides an example of how to use it. We need to provide seconds, so we can use the `#s` format, where we replace `#` with our number, so we can use `3s`.
+**Argument 2: duration**
+- We want 3 seconds, so we use `3s`
 
 ```
 Broadcast * 3s
 ```
 
-3. `message` argument&#x20;
-
-This will be the text that will be displayed, so we provide `"cool broadcast"`
+**Argument 3: message**
+- We provide our text in quotes: `"cool broadcast"`
 
 ```
 Broadcast * 3s "cool broadcast"
 ```
 
-{% hint style="danger" %}
-## Providing text in SER
+## Important: Text Must Be Quoted
 
-When providing text, you MUST put it inside quotes. If not, **each word** will be assumed to be a **different argument**, causing an error.
+When providing text as an argument, you **MUST** enclose it in double quotes. Without quotes, each word is treated as a separate argument, causing an error.
 
 ```
             #1     #2    #3   #4
@@ -119,17 +104,18 @@ When providing text, you MUST put it inside quotes. If not, **each word** will b
           - - - - -  #1  - - - - -
 ✅ Reply "example message to print"
 ```
-{% endhint %}
 
-Using this information we can quickly make a player broadcast! Let's open the `myScript.txt` file in your `SER` folder, and add the following:
+## Putting It All Together
+
+Open your script file and add the following:
 
 ```
 Reply "Hello, World!"
 Broadcast * 3s "cool broadcast"
 ```
 
-Now if you run this script, you should get a broadcast like this:
+When you run this script, you'll see:
+- A reply message saying "Hello, World!"
+- A broadcast to all players displaying "cool broadcast" for 3 seconds
 
-<figure><img src="https://github.com/user-attachments/assets/126d0612-4b1d-4d83-b492-78def6ca546b" alt="" width="563"><figcaption></figcaption></figure>
-
-And that's it, you now know how to use methods!
+And that's it! You now know how to use methods in SER!
