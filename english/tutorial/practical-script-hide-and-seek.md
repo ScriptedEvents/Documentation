@@ -47,7 +47,7 @@ LockDoor LczCheckpointB
 CleanupPickups
 ```
 
-You may be confused about the `LockDoor`'s arguments. We use `LczCheckpointA` and `LczCheckpointB`, but where did they come from? Let's see its documentation (as of `29.10.2025`):
+You may be confused about the `LockDoor`'s arguments. We use `LczCheckpointA` and `LczCheckpointB`, but where did they come from? Let's see its documentation:
 
 ```
 === LockDoor ===
@@ -62,14 +62,14 @@ This method expects the following arguments:
  - Default value: AdminCommand
 ```
 
-The `Expected value` of the `doors` argument may be a little long, but we are interested in the `DoorName` enum.&#x20;
+The `Expected value` of the `doors` argument may be a little long, but we are interested in the `DoorName` enum.
 
 {% hint style="warning" %}
 ## About enums
 
-Imagine enums as a set of options. In this case `DoorName` enum has a set of door names used in the map.&#x20;
+Imagine enums as a set of options. In this case `DoorName` enum has a set of door names used in the map.
 
-The `serhelp` command provides you with more information about the used enums. Use `serhelp enums` to learn more, or use `serhelp EnumName` to learn about a given enum.&#x20;
+The `serhelp` command provides you with more information about the used enums. Use `serhelp enums` to learn more, or use `serhelp EnumName` to learn about a given enum.
 
 In this case, you can use `serhelp DoorName` to access all door names.
 {% endhint %}
@@ -88,7 +88,7 @@ This method simply limits the amount of returned players with its last argument,
 
 ### Defining the hiders
 
-In order to have the rest be hiders, we can use the `RemovePlayers` method. Here is its documentation (as of `28.10.2025`):
+In order to have the rest be hiders, we can use the `RemovePlayers` method. Here is its documentation:
 
 ```
 === RemovePlayers ===
@@ -122,11 +122,13 @@ Lastly, we need to add a countdown and teleport the seeker to LCZ.
 ```
 # create a countdown until the release of the seeker
 Countdown * 1m "<b>The seeker will be released in:<br><color=red>%seconds%"
-Wait 1m
+wait 1m
 
 # by releasing we just mean teleporting him to LCZ
-TPRoom @seeker LczClassDSpawn
+TPSpawn @seeker Scp939
 ```
+
+The `TPSpawn` method teleports players to where a specified role would spawn. Since we're teleporting the seeker to where SCP-939 spawns (which is in LCZ), this effectively releases them into the play area.
 
 ## Final result
 
@@ -158,10 +160,11 @@ SetRole @hiders ClassD
 
 # create a countdown until the release of the seeker
 Countdown * 1m "<b>The seeker will be released in:<br><color=red>%seconds%"
-Wait 1m
+wait 1m
 
 # by releasing we just mean teleporting him to LCZ
-TPRoom @seeker LczClassDSpawn
+TPSpawn @seeker Scp939
 ```
 
 Now you have a very simple way to run a hide and seek event!
+
