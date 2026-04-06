@@ -14,13 +14,13 @@ This guide is **NOT** about how to set up your SCP:SL server. This guide is for 
 Things that are not strictly about this plugin - like granting admin roles and setting up your server - are not covered here. The official SCP:SL discord server provides technical support for things like this.
 {% endhint %}
 
-## #1 - Install the `SER.dll` and `NCalc.dll` files
+## #1 - Install the `SER.dll` file
 
 You can find the latest releases here:
 
 > [https://github.com/ScriptedEvents/ScriptedEventsReloaded/releases](https://github.com/ScriptedEvents/ScriptedEventsReloaded/releases)
 
-## #2 - Move them to the correct folders
+## #2 - Move to the correct folder
 
 ### `SER.dll`
 
@@ -33,13 +33,6 @@ This is the main plugin. This should be moved to either one of these locations:
 `[PORT NUMBER]` is a number like `7777`, which corresponds to a port of your server. It's recommended to put use the `global` directory if you're unsure.
 {% endhint %}
 
-### `NCalc.dll`&#x20;
-
-This is a dependency for handling logical operations like conditions. This should be moved to either:
-
-* `LabAPI -> dependencies -> [PORT NUMBER] -> NCalc.dll`
-* `LabAPI -> dependencies -> global -> NCalc.dll`
-
 ## #3 - Restart the server
 
 When the server finishes loading, you should see a message like this:
@@ -48,7 +41,7 @@ When the server finishes loading, you should see a message like this:
 Thank you for using ### Scripted Events Reloaded ### by Elektryk_Andrzej!
 ```
 
-This means that SER has loaded successfully.&#x20;
+This means that SER has loaded successfully.
 
 {% hint style="warning" %}
 If you don't see this, check if an error hasn't been thrown. The most common issues are:
@@ -57,7 +50,7 @@ If you don't see this, check if an error hasn't been thrown. The most common iss
 * Incorrect installation
 {% endhint %}
 
-## #4 - Verify&#x20;
+## #4 - Verify
 
 After a successful installation, you should see a folder like this:
 
