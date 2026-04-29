@@ -1,5 +1,5 @@
 ---
-description: Wie installierst du SER auf deinem Server
+description: So installierst du SER auf deinem Server
 icon: bars-progress
 metaLinks:
   alternates:
@@ -9,74 +9,67 @@ metaLinks:
 # Installation
 
 {% hint style="danger" %}
-Diese Anleitung beschreibt **NICHT**, wie du deinen SCP:SL Server erstellst. Diese Anleitung richtet sich an Personen, die mit deren Server vertraut sind und bereits Erfahrung mit anderen Erfahrungen mit anderen Plugins haben.
+In dieser Anleitung geht es **NICHT** darum, wie du deinen SCP:SL Server grundlegend einrichtest. Dieser Guide ist für Leute gedacht, die wissen, wie Server funktionieren und die schon mal mit Plugins gearbeitet haben.
 
-Dinge, die nicht direkt mit diesem Plugin zusammenhängen - wie die Vergabe von Admin-Rollen oder die Servereinrichtung - werden hier nicht behandelt. Der offizielle SCP:SL Discord bietet dafür den Technischen Support.
+Dinge, die nicht direkt mit diesem Plugin zu tun haben – wie das Zuweisen von Admin-Rollen oder das Aufsetzen des Servers – werden hier nicht behandelt. Der offizielle SCP:SL Discord-Server bietet technischen Support für solche Themen.
 {% endhint %}
 
-## #1 - Installiere die `SER.dll` Datei und `NCalc.dll` Dateien
+## #1 - Installiere die `SER.dll` Datei
 
-Du kannst die neueste Version hier finden:
+Die neuesten Versionen (Releases) findest du hier:
 
 > [https://github.com/ScriptedEvents/ScriptedEventsReloaded/releases](https://github.com/ScriptedEvents/ScriptedEventsReloaded/releases)
 
-## #2 - Verschiebe diese in den richtigen Ordner
+## #2 - In den richtigen Ordner verschieben
 
 ### `SER.dll`
 
-Dies ist das eigentliche Plugin. Diese sollte in einen dieser Ordner verschoben werden:
+Das ist das Haupt-Plugin. Es sollte in einen dieser beiden Ordner verschoben werden:
 
-* `LabAPI -> plugins -> [PORT NUMBER] -> SER.dll`
+* `LabAPI -> plugins -> [PORT NUMMER] -> SER.dll`
 * `LabAPI -> plugins -> global -> SER.dll`
 
 {% hint style="info" %}
-`[PORT NUMBER]` ist eine Nummer wie `7777`, welche als Port deines Servers gilt. Wir empfehlen den `global` Ordner zu nutzen, wenn du dir unsicher bist.
+`[PORT NUMMER]` ist eine Zahl wie `7777`, die dem Port deines Servers entspricht. Wenn du dir unsicher bist, nimm einfach den `global` Ordner.
 {% endhint %}
 
-### `NCalc.dll`&#x20;
+## #3 - Server neu starten
 
-Dies ist die Dependency des Plugins. Sie wird für die Verarbeitung logischer Operationen wie Bedingungen benötigt. Diese Datei gehört in einer dieser Ordner:
-
-* `LabAPI -> dependencies -> [PORT NUMBER] -> NCalc.dll`
-* `LabAPI -> dependencies -> global -> NCalc.dll`
-
-## #3 - Den Server neustarten
-
-Wenn der Server den Neustart abgeschlossen hat, sollte so eine Nachricht in der Konsole auftauchen:
+Wenn der Server fertig geladen hat, solltest du eine Nachricht wie diese hier sehen:
 
 ```
 Thank you for using ### Scripted Events Reloaded ### by Elektryk_Andrzej!
 ```
 
-Dies bedeutet, dass SER korrekt geladen wurde.&#x20;
+Das bedeutet, dass SER erfolgreich geladen wurde.
 
 {% hint style="warning" %}
-Wenn du das nicht siehst, prüfe, ob ein Fehler aufgetreten ist. Häufige Probleme sind:
+Falls du das nicht siehst, prüfe, ob eine Fehlermeldung ausgegeben wurde. Die häufigsten Probleme sind:
 
-* Entweder SER oder der Server sind nicht mehr aktuell
+* Entweder SER oder dein Server sind veraltet
 * Falsche Installation
 {% endhint %}
 
-## #4 - Verifizierung&#x20;
+## #4 - Überprüfen
 
-Nach einer erfolgreichen Installation, solltest du diesen Ordner sehen:
+Nach einer erfolgreichen Installation solltest du diesen Ordner hier sehen:
 
 ```
 LabAPI -> configs -> Scripted Events Reloaded
 ```
 
-Jedes Skript muss sich in diesem Ordner befinden um geladen zu werden.
+Jedes Script muss in diesem Ordner liegen, damit SER es finden kann.
 
-## #5 - Generiere Beispiele für Skripts (Optional)
+## #5 - Beispiel-Scripts generieren (optional)
 
-Wenn du dir einige Beipiele für Skripts ansehen willst, kannst du den Befehl `serexamples` in der Konsole eingeben.
+Wenn du dir ein paar Beispiel-Scripts ansehen willst, kannst du den Befehl `serexamples` in der Server-Konsole nutzen.
 
-Diese befinden sich dann in:
+Diese findest du dann hier:
 
 ```
 LabAPI -> configs -> Scripted Events Reloaded -> Example Scripts
 ```
 
-Mache dich mit den generierten Skripts vertraut! Diese fügen vielleicht Features zu deinem Server hinzu, die du nicht möchtest und sind hauptsächlich für die demonstrierung der Fähigkeiten von SER da.
+Schau dir die generierten Scripts auf jeden Fall an! Sie könnten Funktionen hinzufügen, die du vielleicht gar nicht auf deinem Server haben willst. Sie sind rein dazu da, um zu zeigen, was SER alles drauf hat.
 
-Wenn du ein unerwünschtes Skript hast, entferne einfach die Datei. Du kannst diese immer mit dem Befehl `serexamples` wieder generieren.
+Wenn dir ein Script nicht gefällt, lösch die Datei einfach. Du kannst sie jederzeit mit dem `serexamples` Befehl wieder herholen.
