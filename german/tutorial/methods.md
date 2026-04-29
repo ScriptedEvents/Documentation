@@ -125,4 +125,4 @@ Wenn du das Script jetzt ausführst, solltest du einen Broadcast wie diesen hier
 
 <figure><img src="https://github.com/user-attachments/assets/126d0612-4b1d-4d83-b492-78def6ca546b" alt="" width="563"><figcaption></figcaption></figure>
 
-Und das war's auch schon – du
+Und das war's auch schon – du weißt jetzt, wie man Methoden benutzt!
