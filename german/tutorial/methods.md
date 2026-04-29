@@ -5,29 +5,29 @@ metaLinks:
     - /broken/spaces/cuMKPytdZ4h8yad4Mib4/pages/z82x1UopunT8VxmQ9tE8
 ---
 
-# Methods
+# Methoden
 
-Methods are like commands. Like commands, these can take certain arguments/parameters and do something with them. These are the building blocks of your scripts.
+Methoden sind im Grunde wie Befehle. Genau wie Befehle können sie bestimmte Argumente oder Parameter entgegennehmen und damit etwas auslösen. Sie sind quasi die Bausteine deiner Scripts.
 
-## What classifies as a method?
+## Was gilt als Methode?
 
-For something to be classified as a method by the script, it needs to:
+Damit das Script etwas als Methode erkennt, müssen folgende Punkte erfüllt sein:
 
-1. Be an existing method (findable in `serhelp methods`)
+1. Es muss eine existierende Methode sein (du findest sie über `serhelp methods`).
 
 ```
 🚫 SendMassiveMessage "Hello, World!"
 ✅ Reply "Hello, World!"
 ```
 
-2. Be the first word in the line (exceptions apply, explained later)
+2. Es muss das erste Wort in der Zeile sein (es gibt Ausnahmen, die später erklärt werden).
 
 ```
 🚫 test Reply "Hello, World!"
 ✅ Reply "Hello, World!"
 ```
 
-3. Be the exact same case-wise
+3. Die Groß- und Kleinschreibung muss exakt stimmen.
 
 ```
 🚫 reply "Hello, World!"
@@ -35,101 +35,94 @@ For something to be classified as a method by the script, it needs to:
 ✅ Reply "Hello, World!"
 ```
 
-## What methods can I use?
+## Welche Methoden kann ich benutzen?
 
-The `serhelp` command will tell you! If you do `serhelp methods`, you will get a list of all methods you have at your disposal.
+Der Befehl `serhelp` verrät es dir! Wenn du `serhelp methods` eingibst, bekommst du eine Liste mit allen Methoden, die dir zur Verfügung stehen.
 
 {% hint style="warning" %}
-By the time you're reading this tutorial, the command could've changed a little. I advise you to verify by yourself if the command matches what is shown here.
+Bis du dieses Tutorial liest, könnte sich der Befehl ein wenig geändert haben. Ich rate dir, selbst kurz zu prüfen, ob der Befehl noch so aussieht wie hier gezeigt.
 {% endhint %}
 
-Here's a small part of the output:
+Hier ist ein kleiner Ausschnitt der Ausgabe:
 
 ```
 ...
 
 --- Broadcast methods ---
-> ClearCountdown                Removes an active countdown for players if one is active.
-> Countdown                     Creates a countdown using broadcasts.
-> Broadcast                     Sends a broadcast to players.
-> ClearBroadcasts               Clears broadcasts for players.
-> Hint                          Sends a hint to players.
+> ClearCountdown       Entfernt einen aktiven Countdown für Spieler.
+> Countdown            Erstellt einen Countdown via Broadcast.
+> Broadcast            Sendet einen Broadcast an Spieler.
+> ClearBroadcasts      Löscht alle Broadcasts für Spieler.
+> Hint                 Sendet einen Hint (Hinweis) an Spieler.
 
 ...
 ```
 
-## How to get information about a specific method?
+## Wie bekomme ich Infos zu einer bestimmten Methode?
 
-You can do `serhelp <methodName>` to get info about a specific method. Let's run the `serhelp Broadcast` command and see what it gives us:
+Du kannst `serhelp <methodenName>` eingeben, um Infos zu einer spezifischen Methode zu erhalten. Schauen wir uns mal an, was passiert, wenn wir `serhelp Broadcast` eingeben:
 
 ```
 === Broadcast ===
-> Sends a broadcast to players.
+> Sendet einen Broadcast an Spieler.
 
-This method expects the following arguments:
-(1) 'players' argument
- - Expected value: Player variable e.g. @players or * for every player
+Diese Methode erwartet folgende Argumente:
+(1) 'players' Argument
+ - Erwarteter Wert: Spieler-Variable z.B. @players oder * für alle Spieler
 
-(2) 'duration' argument
- - Expected value: Duration in format #ms (milliseconds), #s (seconds), #m (minutes) etc., e.g. 5s or 2m
+(2) 'duration' Argument (Dauer)
+ - Erwarteter Wert: Dauer im Format #ms (Millisekunden), #s (Sekunden), #m (Minuten) etc., z.B. 5s oder 2m
 
-(3) 'message' argument
- - Expected value: Any text e.g. "Hello, World!"
+(3) 'message' Argument (Nachricht)
+ - Erwarteter Wert: Beliebiger Text z.B. "Hello, World!"
 ```
 
-## How to use that information?
+## Wie nutze ich diese Informationen?
 
-So, let's say we want a broadcast `cool broadcast` to every player for 3 seconds, how to do that?
+Sagen wir mal, wir wollen den Broadcast `cool broadcast` für 3 Sekunden an alle Spieler senden. Wie machen wir das?
 
-Well, we have 3 arguments:
+Wir haben 3 Argumente:
 
-1. `players` argument
-
-If we want this argument to mean "all players", we can just use `*`, which represents all players.
+1. **Das `players` Argument** Wenn wir "alle Spieler" meinen, nehmen wir einfach das Sternchen `*`.
 
 ```
 Broadcast *
 ```
 
-2. `duration` argument
-
-This argument provides an example of how to use it. We need to provide seconds, so we can use the `#s` format, where we replace `#` with our number, so we can use `3s`.
+2. **Das `duration` Argument** In der Hilfe steht, wie es geht: Wir brauchen Sekunden, also nutzen wir das Format `#s`. Wir ersetzen `#` durch unsere Zahl, also `3s`.
 
 ```
 Broadcast * 3s
 ```
 
-3. `message` argument&#x20;
-
-This will be the text that will be displayed, so we provide `"cool broadcast"`
+3. **Das `message` Argument** Das ist der Text, der angezeigt werden soll. Wir schreiben also `"cool broadcast"`.
 
 ```
 Broadcast * 3s "cool broadcast"
 ```
 
 {% hint style="danger" %}
-## Providing text in SER
-
-When providing text, you MUST put it inside quotes. If not, **each word** will be assumed to be a **different argument**, causing an error.
+## Text in SER angeben
+Wenn du Text angibst, MUSST du ihn in Anführungszeichen setzen. Wenn du das nicht machst, wird **jedes Wort** als **eigenes Argument** gewertet, was zu einem Fehler führt.
 
 ```
-            #1     #2    #3   #4
-🚫 Reply example message to print
+            #1      #2       #3        #4
+🚫 Reply Beispiel Nachricht zum Ausgeben
 
           - - - - -  #1  - - - - -
-✅ Reply "example message to print"
+✅ Reply "Beispiel Nachricht zum Ausgeben"
 ```
 {% endhint %}
 
-Using this information we can quickly make a player broadcast! Let's open the `myScript.txt` file in your `SER` folder, and add the following:
+Mit diesem Wissen können wir ruckzuck einen Player-Broadcast erstellen! Öffne die Datei `myScript.txt` in deinem `SER`-Ordner und füge folgendes hinzu:
 
 ```
 Reply "Hello, World!"
 Broadcast * 3s "cool broadcast"
 ```
 
-Now if you run this script, you should get a broadcast like this:
+Wenn du das Script jetzt ausführst, solltest du einen Broadcast wie diesen hier sehen:
 
 <figure><img src="https://github.com/user-attachments/assets/126d0612-4b1d-4d83-b492-78def6ca546b" alt="" width="563"><figcaption></figcaption></figure>
 
-And that's it, you now know how to use methods!
+Und das war's auch schon – du
