@@ -5,64 +5,64 @@ metaLinks:
     - /broken/spaces/cuMKPytdZ4h8yad4Mib4/pages/SYPENGhvwwAGf2YqEEjK
 ---
 
-# Advanced player variables
+# Fortgeschrittene Spieler-Variablen
 
-At some point the predefined player variables will not be enough to achieve what you want. Fortunately, you can do much more!
+Irgendwann reichen die vorgegebenen Spieler-Variablen einfach nicht mehr aus, um das umzusetzen, was du im Kopf hast. Zum Glück kannst du aber noch viel mehr rausholen!
 
-## Creating your own player variable
+## Eigene Spieler-Variablen erstellen
 
-There are 3 ways of creating player variables, each more powerful than the last.
+Es gibt 3 Wege, eigene Variablen zu erstellen – jeder davon ist ein Stück mächtiger als der vorherige.
 
-### Creating an empty variable
+### Eine leere Variable erstellen
 
 ```
-# creates an empty player variable named @myPlayerVariable
+# Erstellt eine leere Spieler-Variable mit dem Namen @myPlayerVariable
 @myPlayerVariable = ()
 ```
 
-If you ever need to make an empty variable, here is a way to do that.
+Wenn du mal eine komplett leere Variable brauchst, ist das der Weg.
 
-### Copying an existing variable
+### Eine bestehende Variable kopieren
 
 ```
-# creates a copy of the @scpPlayers variable
+# Erstellt eine Kopie der @scpPlayers Variable
 @myVar = @scpPlayers
 ```
 
-You have now created a variable that has the exact same players as the `@scpPlayers` has in that moment!
+Damit hast du eine Variable erstellt, die exakt die gleichen Spieler enthält, die `@scpPlayers` in diesem Moment hat!
 
-#### Example usage
+#### Beispiel-Anwendung
 
-Take this script for example:
+Schau dir mal dieses Script hier an:
 
-<pre><code># we want to kill all SCPs and make them CI
+<pre><code># Wir wollen alle SCPs töten und sie zu CI machen
 Kill @scpPlayers
 <strong>SetRole @scpPlayers ChaosConscript
 </strong></code></pre>
 
-You should already be sus of this script. We can't set `@scpPlayers` to be Chaos Conscripts if all SCPs are dead!
+Hier solltest du direkt skeptisch werden. Wir können die `@scpPlayers` nicht zu Chaos Conscripts machen, wenn alle SCPs gerade gestorben sind!
 
-Let's try using `@spectatorPlayers` instead:
+Versuchen wir es stattdessen mal mit `@spectatorPlayers`:
 
-<pre><code># we want to kill all SCPs and make them CI
+<pre><code># Wir wollen alle SCPs töten und sie zu CI machen
 Kill @scpPlayers
 <strong>SetRole @spectatorPlayers ChaosConscript
 </strong></code></pre>
 
-It will now work, but other spectators - that weren't SCPs - will also be changed into CI. That is a bit of a pickle, but it can be resolved **by making a copy of `@scpPlayers`!**
+Das würde zwar funktionieren, aber dann werden auch alle anderen Zuschauer – die vorher gar keine SCPs waren – zu CI. Das ist ein ziemliches Dilemma, aber wir können das Problem lösen, **indem wir einfach eine Kopie von `@scpPlayers` machen!**
 
-<pre><code># here we create a copy of @scpPlayers and use that
+<pre><code># Hier erstellen wir eine Kopie von @scpPlayers und benutzen diese
 <strong>@scpsToDie = @scpPlayers
 </strong>Kill @scpsToDie
 SetRole @scpsToDie ChaosConscript
 </code></pre>
 
-Why is this the correct solution to the problem?&#x20;
+Warum ist das die richtige Lösung für das Problem?
 
 {% hint style="info" %}
-## Custom variables don't update automatically!
+## Eigene Variablen aktualisieren sich nicht von selbst!
 
-This means that it doesn't matter that the `@scpPlayers` value has changed, because `@scpsToDie` variable's value **does not update** with it.&#x20;
+Das bedeutet: Es ist völlig egal, ob sich der Wert von `@scpPlayers` später ändert. Der Wert der Variable `@scpsToDie` **ändert sich nicht mit**.
 
-In other words, the value of `@scpsToDie` only makes a "snapshot" of all players inside the `@scpPlayers` variable, and does not care if that value has changed later.   &#x20;
+Mit anderen Worten: Der Wert von `@scpsToDie` macht quasi einen "Snapshot" (Schnappschuss) von allen Spielern, die gerade in der `@scpPlayers` Variable drin sind. Was danach mit diesen Spielern passiert, ist der neuen Variable völlig egal.
 {% endhint %}
