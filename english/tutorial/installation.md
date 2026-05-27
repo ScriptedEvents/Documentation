@@ -40,7 +40,7 @@ LabAPI -> plugins -> global -> SER.dll
 
 This is the EXILED version and will work only on a server using EXILED. It should be moved to:
 ```
-EXILED -> Plugins -> SER-Exiled.ser
+EXILED -> Plugins -> SER-Exiled.dll
 ```
 
 ## #3 - Restart the server
