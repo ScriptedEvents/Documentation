@@ -1,8 +1,5 @@
 ---
 icon: scroll
-metaLinks:
-  alternates:
-    - /broken/spaces/cuMKPytdZ4h8yad4Mib4/pages/R2VVig28xjUEym0cJuf4
 ---
 
 # Scripts
@@ -11,12 +8,20 @@ Scripts are lists of commands the server executes automatically. Instead of you 
 
 ## Where to make a script?
 
-All scripts are stored in the `LabAPI -> configs -> Scripted Events Reloaded` folder. You can also make folders with scripts inside the `Scripted Events Reloaded` folder, SER also supports that!
+All scripts are stored in this folder:
+```
+LabAPI -> configs -> Scripted Events Reloaded
+```
+
+You can also make folders with scripts inside the `Scripted Events Reloaded` folder, SER also supports that!
+```
+LabAPI -> configs -> Scripted Events Reloaded -> my awesome folder
+```
 
 ## How to make a script?
 
-All scripts are text files. Create a file called `myScript.txt`, which will be your first script. Once created, copy the following:
-
+All scripts are text files. Create a file called `myScript.ser` (or `myScript.txt`), which will be your first script.
+Once created, copy the following:
 ```
 Reply "Hello, World!"
 ```
@@ -44,11 +49,11 @@ The `serrun` command only expects **script names, not full file names!**
 You should now see a message like this:
 
 ```
-[21:37:69] serrun myScript
-[21:37:69] Hello, World!
-[21:37:69] Script 'myScript' was requested to run
+serrun myScript
+Hello, World!
+Script 'myScript' was requested to run
 ```
 
 {% hint style="warning" %}
-When using remote admin console, you will need the `ser.run` permission, otherwise the script will not run.
+When using remote admin console, you will need the `ser.run` permission, otherwise the sender will not be able to run the script.
 {% endhint %}
