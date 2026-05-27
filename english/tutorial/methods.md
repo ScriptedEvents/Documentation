@@ -1,8 +1,5 @@
 ---
 icon: command
-metaLinks:
-  alternates:
-    - /broken/spaces/cuMKPytdZ4h8yad4Mib4/pages/z82x1UopunT8VxmQ9tE8
 ---
 
 # Methods
@@ -20,7 +17,7 @@ For something to be recognized as a method by the script engine, it must:
 ✅ Reply "Hello, World!"
 ```
 
-2. **Be the first word in the line** (with rare exceptions)
+2. **Be the first word in the line** (with exceptions)
 
 ```
 🚫 test Reply "Hello, World!"
@@ -39,7 +36,7 @@ For something to be recognized as a method by the script engine, it must:
 
 Use the `serhelp` command to explore methods! Run `serhelp methods` to see all available methods organized by category.
 
-There are currently **> 200 methods** available, organized into categories like:
+There are currently **> 250 methods** available, organized into categories like:
 - Audio methods
 - Broadcast methods
 - Door methods
@@ -59,7 +56,7 @@ Use `serhelp <methodName>` to get detailed information about any method. For exa
 
 This method expects the following arguments:
 (1) 'players' argument
- - Expected value: Player variable e.g. @players or * for every player
+ - Expected value: Player variable (e.g. @players), RoleTypeId enum (e.g. ClassD), Team enum (e.g. SCPs), player id's or name
 
 (2) 'duration' argument
  - Expected value: Duration in format #ms (milliseconds), #s (seconds), #m (minutes) etc., e.g. 5s or 2m
@@ -73,24 +70,24 @@ This method expects the following arguments:
 Let's say you want to send a broadcast saying `"cool broadcast"` to every player for 3 seconds. Here's how to break it down:
 
 **Argument 1: players**
-- We want all players, so we use `*`
+- We want all players, so we use `@all`
 
 ```
-Broadcast *
+Broadcast @all
 ```
 
 **Argument 2: duration**
 - We want 3 seconds, so we use `3s`
 
 ```
-Broadcast * 3s
+Broadcast @all 3s
 ```
 
 **Argument 3: message**
 - We provide our text in quotes: `"cool broadcast"`
 
 ```
-Broadcast * 3s "cool broadcast"
+Broadcast @all 3s "cool broadcast"
 ```
 
 ## Important: Text Must Be Quoted
@@ -111,7 +108,7 @@ Open your script file and add the following:
 
 ```
 Reply "Hello, World!"
-Broadcast * 3s "cool broadcast"
+Broadcast @all 3s "cool broadcast"
 ```
 
 When you run this script, you'll see:
