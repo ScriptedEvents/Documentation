@@ -7,7 +7,7 @@
 * [Installation](tutorial/installation.md)
 * [Scripts](tutorial/scripts.md)
 * [Methods](tutorial/methods.md)
-* [Yielding Methods](tutorial/yielding-methods.md)
+* [Yielding](tutorial/yielding-keywords.md)
 * [Practical script - Server advertisement](tutorial/practical-script-server-advertisement.md)
 * [Variables](tutorial/variables.md)
 * [Player variables](tutorial/player-variables.md)
