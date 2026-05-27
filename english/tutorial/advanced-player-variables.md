@@ -17,7 +17,7 @@ There are 3 ways of creating player variables, each more powerful than the last.
 
 ```
 # creates an empty player variable named @myPlayerVariable
-@myPlayerVariable = ()
+@myPlayerVariable = @empty
 ```
 
 If you ever need to make an empty variable, here is a way to do that.
