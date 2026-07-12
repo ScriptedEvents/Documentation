@@ -57,3 +57,5 @@ Script 'myScript' was requested to run
 {% hint style="warning" %}
 When using remote admin console, you will need the `ser.run` permission, otherwise the sender will not be able to run the script.
 {% endhint %}
+
+### [Script flags](script-flags.md)

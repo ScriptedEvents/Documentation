@@ -41,7 +41,7 @@ It's useful to write down what do we want to achieve with a given script.
 First broadcast should look something like this:
 
 ```
-Broadcast * 7s "Thank you for playing on Script Mania! Enjoy your stay!"
+Broadcast @all 7s "Thank you for playing on Script Mania! Enjoy your stay!"
 ```
 
 Which in turn looks something like this:
@@ -51,7 +51,7 @@ Which in turn looks something like this:
 But we can do better! Using [https://docs.unity3d.com/Packages/com.unity.textmeshpro@4.0/manual/RichTextSupportedTags.html](https://docs.unity3d.com/Packages/com.unity.textmeshpro@4.0/manual/RichTextSupportedTags.html), we can use custom tags to spice up our broadcast like so:
 
 ```
-Broadcast * 7s "<b><size=30><color=#cfc0fa>Thank you for playing on</color></size><br><size=50><color=#ffdc69>ScriptMania!</color></size><br><size=20>Enjoy your stay!</size></b>"
+Broadcast @all 7s "<b><size=30><color=#cfc0fa>Thank you for playing on</color></size><br><size=50><color=#ffdc69>ScriptMania!</color></size><br><size=20>Enjoy your stay!</size></b>"
 ```
 
 <figure><img src="../.gitbook/assets/image (6).png" alt="" width="563"><figcaption></figcaption></figure>
@@ -63,7 +63,7 @@ For the sake of this tutorial, we will be using [discord.gg/3j54zBnbbD](https://
 Using the same principles, we can add the 2nd:
 
 ```
-Broadcast * 7s "<b><size=30><color=#cfc0fa>Check out our discord server!</color></size><br><size=50><color=#ffdc69>discord.gg/3j54zBnbbD</color></size></b>"
+Broadcast @all 7s "<b><size=30><color=#cfc0fa>Check out our discord server!</color></size><br><size=50><color=#ffdc69>discord.gg/3j54zBnbbD</color></size></b>"
 ```
 
 <figure><img src="../.gitbook/assets/image (7).png" alt="" width="563"><figcaption></figcaption></figure>
@@ -71,7 +71,7 @@ Broadcast * 7s "<b><size=30><color=#cfc0fa>Check out our discord server!</color>
 And the 3rd broadcast:
 
 ```
-Broadcast * 7s "<b><size=30><color=#cfc0fa>Donate to the SER team!</color></size><br><size=50><color=#ffdc69>ko-fi.com/elektrykandrzej</color></size></b>"
+Broadcast @all 7s "<b><size=30><color=#cfc0fa>Donate to the SER team!</color></size><br><size=50><color=#ffdc69>ko-fi.com/elektrykandrzej</color></size></b>"
 ```
 
 <figure><img src="../.gitbook/assets/image (8).png" alt="" width="563"><figcaption></figcaption></figure>
@@ -84,13 +84,13 @@ Broadcast * 7s "<b><size=30><color=#cfc0fa>Donate to the SER team!</color></size
 # broadcast 3: "consider donating" ad for the moneys
 # we also want to have a 2s gap between broadcasts for more finesse
 
-Broadcast * 7s "<b><size=30><color=#cfc0fa>Thank you for playing on</color></size><br><size=50><color=#ffdc69>ScriptMania!</color></size><br><size=20>Enjoy your stay!</size></b>"
+Broadcast @all 7s "<b><size=30><color=#cfc0fa>Thank you for playing on</color></size><br><size=50><color=#ffdc69>ScriptMania!</color></size><br><size=20>Enjoy your stay!</size></b>"
 wait 9s
 
-Broadcast * 7s "<b><size=30><color=#cfc0fa>Check out our discord server!</color></size><br><size=50><color=#ffdc69>discord.gg/3j54zBnbbD</color></size></b>"
+Broadcast @all 7s "<b><size=30><color=#cfc0fa>Check out our discord server!</color></size><br><size=50><color=#ffdc69>discord.gg/3j54zBnbbD</color></size></b>"
 wait 9s
 
-Broadcast * 7s "<b><size=30><color=#cfc0fa>Donate to the SER team!</color></size><br><size=50><color=#ffdc69>ko-fi.com/elektrykandrzej</color></size></b>"
+Broadcast @all 7s "<b><size=30><color=#cfc0fa>Donate to the SER team!</color></size><br><size=50><color=#ffdc69>ko-fi.com/elektrykandrzej</color></size></b>"
 ```
 
 {% hint style="warning" %}
@@ -100,3 +100,7 @@ This is because the `Broadcast` method is **not yielding**! This means that in t
 {% endhint %}
 
 Now you've created a complete advertising script!
+
+### What's next?
+
+Continue with [Loops](loops.md) to repeat an action safely instead of writing the same instructions again.

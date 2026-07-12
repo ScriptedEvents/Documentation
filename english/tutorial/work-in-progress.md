@@ -7,9 +7,21 @@ metaLinks:
 
 # Work in progress!
 
-The SER wiki for now ends here, but it doesn't mean that there won't be more tutorials!
+The SER wiki is constantly growing! The current beginner path covers installation, values, variables, control flow, collections, functions, errors, flags, debugging, custom roles, and practical projects.
 
-I (Elektryk\_Andrzej) am the only person responsible for creating these tutorials - and these take a lot of time to make.
+## What's still coming?
+
+Here are some topics planned for future tutorials:
+
+* **Configuration files** — Reading YAML configuration with `Config.Read`
+* **Databases and persistent data** — `DB.*` methods and data design
+* **HTTP and Discord** — External integrations and safe error handling
+* **Audio and Admin Toys** — Building richer events
+* **More practical scripts** — Walkthroughs of Hot Potato and zombie infection
+
+---
+
+I (Elektryk\_Andrzej) am the main person responsible for creating these tutorials — and they take a lot of time to make.
 
 If you want to support me and other members of the SE team, please consider:
 

@@ -116,3 +116,7 @@ When you run this script, you'll see:
 - A broadcast to all players displaying "cool broadcast" for 3 seconds
 
 And that's it! You now know how to use methods in SER!
+
+### What's next?
+
+Most useful scripts are attached to a command or an event. Continue with [Script flags](script-flags.md) before learning the deeper value and control-flow features.

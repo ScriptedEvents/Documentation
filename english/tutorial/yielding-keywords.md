@@ -60,3 +60,7 @@ wait_until {AmountOf @scpPlayers} is 0
 #### Other yielding
 
 Yielding can also be achived with yielding **methods** - these usually end with "AndWait" e.g. `Discord.SendMessageAndWait`
+
+### What's next?
+
+Continue with [Loops](loops.md) to repeat instructions while still yielding safely.

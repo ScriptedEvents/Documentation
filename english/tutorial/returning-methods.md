@@ -7,7 +7,7 @@ metaLinks:
 
 # Returning Methods
 
-Methods aren't just for performing actions-many can also **return values** that you can store in variables. This is one of the most powerful features in SER, allowing you to retrieve data from the game and use it in your scripts.
+Methods aren't just for performing actions - many can also **return values** that you can store in variables. This is one of the most powerful features in SER, allowing you to retrieve data from the game and use it in your scripts.
 
 ## Understanding Returning Methods
 
@@ -16,23 +16,23 @@ When you run `serhelp methods`, you'll notice some methods have a `[rets]` marke
 For example:
 
 ```
-> LimitPlayers [rets]           Returns a player variable with amount of players being equal or lower than the limit.
-> RandomNum [rets]              Returns a randomly generated number.
-> AmountOf [rets]               Returns the amount of players in a given player variable.
-> GetRoomByName [rets]          Returns a reference to a room which has the provided name.
+> Take [rets]          ~ Takes a specified amount of players from a player variable, lower or equal to the limit.
+> Random [rets]        ~ Returns a randomly generated number.
+> AmountOf [rets]      ~ Returns the amount of players in a given player variable.
+> GetRoomByName [rets] ~ Returns a reference to a room which has the provided name.
 ```
 
 ## The Exception to the Method Rule
 
-Normally, methods must be the first word on a line. However, **returning methods are the exception**-they can appear on the right side of a variable assignment using the `=` operator.
+Normally, methods must be the first word on a line. However, **returning methods are the exception** - they can appear on the right side of a variable assignment using the `=` operator.
 
 ## How to Use Returning Methods
 
 To capture a return value, assign it to a variable with the appropriate prefix:
 
 ```
-@player = LimitPlayers @classDPlayers 1
-$randomNumber = RandomNum 1 100 int
+@player = Take @classDPlayers 1
+$randomNumber = Random 1 100
 $playerCount = AmountOf @all
 *room = GetRoomByName "LczToilets"
 ```
@@ -42,20 +42,16 @@ $playerCount = AmountOf @all
 Each assignment follows this pattern:
 
 ```
-$variableName = MethodName argument1 argument2 ...
+~variableName = MethodName argument1 argument2 ...
 ```
 
-The variable prefix (`$`, `@`, `*`, or `&`) must match the type the method returns:
-- `$` for literal values (numbers, text, booleans)
-- `@` for player variables
-- `*` for references (rooms, doors, items)
-- `&` for collections
+The variable prefix must match the type the method returns. See the [Variables](variables.md) tutorial if you need a refresher on prefixes.
 
 ## Practical Examples
 
 **Get a random player from Class-D:**
 ```
-@randomClassD = LimitPlayers @classDPlayers 1
+@randomClassD = Take @classDPlayers 1
 ```
 
 **Count all players on the server:**
@@ -70,7 +66,7 @@ $totalPlayers = AmountOf @all
 
 **Generate a random number between 1 and 100:**
 ```
-$randomValue = RandomNum 1 100 int
+$randomValue = Random 1 100
 ```
 
 **Check if a player has a specific effect:**
@@ -83,8 +79,8 @@ $hasEffect = HasEffect @sender Ensnared
 You can use the result of one returning method as an argument to another:
 
 ```
-# Get a random player from all alive players, then limit to 1
-@target = LimitPlayers @alivePlayers 1
+# Get one random player from all alive players
+@target = Take @alivePlayers 1
 
 # Get the count of all players, then use it in a broadcast
 Broadcast @all 5s "There are {AmountOf @all} players online!"
@@ -95,37 +91,49 @@ Broadcast @all 5s "There are {AmountOf @all} players online!"
 Here are some frequently used returning methods:
 
 **Player Operations:**
-- `LimitPlayers` - Select a limited number of players (useful for random selection)
+- `Take` - Select a limited number of players (useful for random selection)
 - `AmountOf` - Count players in a variable
-- `RemovePlayers` - Get players excluding specific ones
-- `FilterPlayers` - Get players matching a condition
+- `Except` - Get players excluding specific ones
+- `Filter` - Get players whose chosen property matches a value
 
 **References:**
 - `GetRoomByName` - Find a room by its name
 - `GetRandomDoor` - Get a random door
 
 **Numbers:**
-- `RandomNum` - Generate random numbers
+- `Random` - Generate random numbers
 - `Chance` - Get a true/false result based on probability
 
 **Text:**
-- `TextLength` - Get the length of text
-- `JoinText` - Combine multiple text values
+- `Text.Contains` - Get a true/false result if a value is in text
+- `Text.Replace` - Replace a value in text
 
 **Data:**
 - `GetPlayerData` - Retrieve stored player data
-- `GetFromDB` - Retrieve database values
+- `DB.Get` - Retrieve database values
 
 ## Verifying Method Return Types
 
 To check what a method returns, use `serhelp MethodName`. The output will show:
 
 ```
-=== LimitPlayers ===
-> Returns a player variable with amount of players being equal or lower than the limit.
+=== Take ===
+> Takes a specified amount of players from a player variable, lower or equal to the limit.
 
-This method returns players, which can be saved or used directly.
+This method returns player value.
+You can save it to a variable with a '@' prefix.
+@myVariable = Take ...
+
+This method expects the following arguments:
+ (1) 'players' argument
+ - Expected value: Player variable (e.g. @all, @classDPlayers)
+
+ (2) 'limit' argument
+ - Expected value: Value must be at least 1 e.g. 3
 ```
 
-The first line tells you exactly what type is returned, helping you choose the correct variable prefix.
+If possible, the method will show you information regarding the return type and how to save it.
 
+### What's next?
+
+Continue with [Properties](properties.md) to inspect data returned by players and game objects.

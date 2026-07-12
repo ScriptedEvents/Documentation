@@ -30,7 +30,7 @@ First 5 points are done using very basic methods:
 
 ```
 # lock the round so the admin can end it whenever he wants to
-RoundLock true
+SetRoundLock true
 
 # start the round 
 # it's assumed that an admin will run this command before the round starts
@@ -76,40 +76,40 @@ In this case, you can use `serhelp DoorName` to access all door names.
 
 ### Defining the seeker
 
-In order to have 1 random player be the seeker, we can use the `LimitPlayers` method like so:
+In order to have 1 random player be the seeker, we can use the `Take` method like so:
 
 ```
-# select a 1 random player and make him a seeker
-@seeker = LimitPlayers * 1
+# select one random player and make them a seeker
+@seeker = Take @all 1
 SetRole @seeker Scp939
 ```
 
-This method simply limits the amount of returned players with its last argument, because `*` means "every player."
+`Take` returns up to the requested number of players. We pass `@all` to select from every player on the server.
 
 ### Defining the hiders
 
-In order to have the rest be hiders, we can use the `RemovePlayers` method. Here is its documentation:
+In order to have the rest be hiders, we can use the `Except` method. Here is its documentation:
 
 ```
-=== RemovePlayers ===
+=== Except ===
 > Returns players from the original variable that were not present in other variables.
 
 This method returns players, which can be saved or used directly.
 
 This method expects the following arguments:
 (1) 'original players' argument
- - Expected value: Player variable e.g. @players or * for every player
+ - Expected value: Player variable (e.g. @all, @classDPlayers)
 
-(2) 'players to remove' argument
- - Expected value: Player variable e.g. @players or * for every player
- - This argument consumes all remaining values; this means that every value provided AFTER this one will ALSO count towards this argument's values.
+(2) 'players to except' argument
+ - Expected value: Player variable (e.g. @all, @classDPlayers)
+ - This argument consumes all remaining values; this means that every value provided AFTER this one will also count towards this argument's values.
 ```
 
 This method may look intimidating, but it's a kind of "subtraction" that's performed on player values.
 
 ```
 # select every player APART FROM the seeker
-@hiders = RemovePlayers * @seeker
+@hiders = Except @all @seeker
 SetRole @hiders ClassD
 ```
 
@@ -121,7 +121,7 @@ Lastly, we need to add a countdown and teleport the seeker to LCZ.
 
 ```
 # create a countdown until the release of the seeker
-Countdown * 1m "<b>The seeker will be released in:<br><color=red>%seconds%"
+Countdown @all 1m "<b>The seeker will be released in:<br><color=red>%seconds%</color></b>"
 wait 1m
 
 # by releasing we just mean teleporting him to LCZ
@@ -134,7 +134,7 @@ The `TPSpawn` method teleports players to where a specified role would spawn. Si
 
 ```
 # lock the round so the admin can end it whenever he wants to
-RoundLock true
+SetRoundLock true
 
 # start the round 
 # it's assumed that an admin will run this command before the round starts
@@ -150,16 +150,16 @@ LockDoor LczCheckpointB
 # remove items from the map
 CleanupPickups
 
-# select a 1 random player and make him a seeker
-@seeker = LimitPlayers * 1
+# select one random player and make them a seeker
+@seeker = Take @all 1
 SetRole @seeker Scp939
 
 # select every player APART FROM the seeker
-@hiders = RemovePlayers * @seeker
+@hiders = Except @all @seeker
 SetRole @hiders ClassD
 
 # create a countdown until the release of the seeker
-Countdown * 1m "<b>The seeker will be released in:<br><color=red>%seconds%"
+Countdown @all 1m "<b>The seeker will be released in:<br><color=red>%seconds%</color></b>"
 wait 1m
 
 # by releasing we just mean teleporting him to LCZ
@@ -167,4 +167,8 @@ TPSpawn @seeker Scp939
 ```
 
 Now you have a very simple way to run a hide and seek event!
+
+### What's next?
+
+Continue with [Custom roles with CRole](custom-roles.md) to build reusable role-based game modes.
 

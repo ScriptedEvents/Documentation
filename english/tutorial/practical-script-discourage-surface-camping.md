@@ -75,3 +75,7 @@ Broadcast @surfacePlayers 8s "<b><color=red>Stop camping on the surface zone!</c
 ```
 
 This simple script automatically discourages surface camping by damaging offenders and notifying them.
+
+### What's next?
+
+Continue with [Properties](properties.md) to make decisions using information from an individual player.
